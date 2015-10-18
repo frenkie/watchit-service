@@ -1,3 +1,4 @@
+var bodyParser = require('body-parser');
 var express = require( 'express' );
 var Q = require('q');
 var spawn = require( 'child_process' ).spawn;
@@ -52,34 +53,17 @@ function userRequestIsValid ( userId, consumerKey ) {
  * ROUTING
  */
 
+app.post('/save/:user', bodyParser.json(), function ( req, res ) {
 
-/*
+    if ( ! req.body ) {
 
-    -   posting a URL for a user (with consumerKey credentials)
-        -   accept different kinds of posting services
-            -   IFTTT Maker channel
-            -   direct URL parameters
- */
+        respondWithBadRequest( res );
 
-// save a request from the If This Then That Maker channel
-app.post('/save/ifttt-maker/:user', function ( req, res ) {
+    } else if ( userRequestIsValid( req.params.user, req.body.consumerKey ) ) {
 
-    console.log( req.body );
+        console.log( require('util' ).inspect( req.body ) );
 
-    if ( userRequestIsValid( req.params.user, req.get('Consumer-Key') ) ) {
-
-        console.log( req.query.url || 'no url' );
-
-        res.send('jeej');
-
-    } else {
-        respondWithForbidden( res );
-    }
-});
-
-app.post('/save/:user', function ( req, res ) {
-
-    if ( userRequestIsValid( req.params.user, req.get('Consumer-Key') ) ) {
+        console.log( req.body.url || 'no url' );
 
         res.send('jeej');
 

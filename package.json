@@ -2,6 +2,7 @@
   "name": "watchit-service",
   "version": "0.0.1",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "phantomjs": "^1.9.18",
     "q": "^1.4.1",
