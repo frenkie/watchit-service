@@ -68,7 +68,7 @@ app.post('/save/ifttt-maker/:user', function ( req, res ) {
 
     if ( userRequestIsValid( req.params.user, req.get('Consumer-Key') ) ) {
 
-        console.log( req.body );
+        console.log( req.query.url || 'no url' );
 
         res.send('jeej');
 
