@@ -82,6 +82,8 @@ router.post('/save/:user', bodyParser.json(), function ( req, res ) {
                     parsed.status = 'new';
                     parsed.pausedAt = 0;
 
+                    debug( parsed );
+
                     var video = new dbModels.Video( parsed );
 
                     video.save(function ( err ) {

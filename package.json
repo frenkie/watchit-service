@@ -13,6 +13,7 @@
     "services": [
       "vimeoService",
       "youtubeService",
+      "npoService",
       "scraperService"
     ]
   }
