@@ -78,6 +78,7 @@ router.post('/save/:user', bodyParser.json(), function ( req, res ) {
                      *      @param {String} parsed.service
                      *      @param {String} [parsed.mediaUri]
                      */
+                    parsed.title = req.body.title || 'Untitled';
                     parsed.watcherId = userId;
                     parsed.status = 'new';
                     parsed.pausedAt = 0;
@@ -99,6 +100,7 @@ router.post('/save/:user', bodyParser.json(), function ( req, res ) {
 
                     var video = new dbModels.Video({
                         originalUrl: req.body.url,
+                        title: req.body.title || 'Untitled',
                         service: 'unknown',
                         status: 'unparseable',
                         watcherId: userId

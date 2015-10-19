@@ -4,6 +4,7 @@ var videoSchema = new mongoose.Schema({
     originalUrl: String,
     service: String,
     status: String,
+    title: String,
     mediaUri: String,
     creationDate: { type: Date, default: Date.now },
     watcherId: mongoose.Schema.Types.ObjectId,
