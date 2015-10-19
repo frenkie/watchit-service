@@ -4,7 +4,6 @@ var mongoose = require('mongoose');
 var appIp = process.env.IP || '0.0.0.0';
 var appPort = process.env.PORT || 4000;
 var app = express();
-var db;
 
 var saveRoutes = require('./routes/save');
 
