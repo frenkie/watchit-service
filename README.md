@@ -1,7 +1,10 @@
 # watchit-service
-The Watchit service creates a video playlist from URLs to (popular) video services, regardless of origin
+The Watchit service creates a unified video playlist from URLs to (popular) 
+video services, regardless of origin.
 
-## Currently in development stage, come back later! 
+
+
+## Currently in development stage, so come back later! 
 
 ## configuration
 Watch It uses Mongodb as a database. To connect to the database you have
