@@ -16,5 +16,5 @@ var watcherSchema = new mongoose.Schema({
     credentials: String
 });
 
-exports.Video = mongoose.model('Video', videoSchema );
-exports.Watcher = mongoose.model('Watcher', watcherSchema );
+exports.Video = mongoose.model('video', videoSchema );
+exports.Watcher = mongoose.model('watcher', watcherSchema );
