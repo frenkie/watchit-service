@@ -1,5 +1,6 @@
 var bodyParser = require('body-parser');
 var dbModels = require('../database/Models');
+var debug = require('debug')('save');
 var express = require('express');
 var helpers = require('../lib/helpers');
 var Q = require('q');
@@ -22,7 +23,6 @@ function parseSaveRequest( requestUrl ) {
     var parsing = false;
 
     services.forEach( function ( service ) {
-
         if ( ! parsing && service.canParse( requestUrl ) ) {
 
             parsing = true;
@@ -42,13 +42,12 @@ function userRequestIsValid ( userName, consumerKey ) {
 
     dbModels.Watcher.findOne(
         { name: userName, consumerKey: consumerKey },
-        'id name consumerKey',
+        '_id name consumerKey',
         function ( error, watcher ) {
-
             if ( error || ! watcher ) {
                 deferred.reject();
             } else {
-                deferred.resolve( watcher.id );
+                deferred.resolve( watcher._id );
             }
         }
     );
@@ -70,6 +69,7 @@ router.post('/save/:user', bodyParser.json(), function ( req, res ) {
 
         userRequestIsValid( req.params.user, req.body.consumerKey ).then(
             function ( userId ) {
+
                 parseSaveRequest( req.body.url ).then( function ( parsed ) {
 
                     /**
