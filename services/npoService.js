@@ -29,7 +29,7 @@ function parse ( url ) {
         deferred.resolve({
             originalUrl: url,
             service: 'npo',
-            mediaId: mediaIdMatch[1]
+            mediaUri: mediaIdMatch[1]
         });
 
     } else {
