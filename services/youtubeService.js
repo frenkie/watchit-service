@@ -17,7 +17,7 @@ function parse ( url ) {
         service: 'youtube'
     });
 
-    return deferred.promise();
+    return deferred.promise;
 }
 
 /***************************

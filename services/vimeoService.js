@@ -12,7 +12,12 @@ function parse ( url ) {
 
     var deferred = Q.defer();
 
-    return deferred.promise();
+    deferred.resolve({
+        originalUrl: url,
+        service: 'vimeo'
+    });
+
+    return deferred.promise;
 }
 
 /***************************

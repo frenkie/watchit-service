@@ -16,7 +16,14 @@ function parse ( url ) {
 
     var deferred = Q.defer();
 
-    return deferred.promise();
+    //deferred.resolve({
+    //    originalUrl: url,
+    //    service: 'unknown'
+    //});
+
+    deferred.reject(); // for now
+
+    return deferred.promise;
 }
 
 /***************************
