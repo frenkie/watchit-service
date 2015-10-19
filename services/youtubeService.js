@@ -12,6 +12,11 @@ function parse ( url ) {
 
     var deferred = Q.defer();
 
+    deferred.resolve({
+        originalUrl: url,
+        service: 'youtube'
+    });
+
     return deferred.promise();
 }
 
