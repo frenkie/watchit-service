@@ -59,15 +59,15 @@ function userRequestIsValid ( userName, consumerKey ) {
  * ROUTING
  */
 
-router.post('/save/:user', bodyParser.json(), function ( req, res ) {
+router.post('/videos', bodyParser.json(), function ( req, res ) {
 
-    if ( ! req.body || ( req.body && ! req.body.url ) ) {
+    if ( ! req.body || ( req.body && ! req.body.url && ! req.body.username ) ) {
 
         helpers.respondWithBadRequest( res );
 
     } else {
 
-        userRequestIsValid( req.params.user, req.body.consumerKey ).then(
+        userRequestIsValid( req.body.username, req.body.consumerKey ).then(
             function ( userId ) {
 
                 parseSaveRequest( req.body.url ).then( function ( parsed ) {

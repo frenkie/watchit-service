@@ -14,13 +14,17 @@ deploy it yourself (even privately) if you want, just check the
 The Watchit service exposes an API with which you can populate the 
 video playlists of a specific user.
 
-### /save/:user
-The save endpoint creates a video entry for the given user.
-A POST call to `http(s)://hostname:port/save/your-username` 
+### /videos
+
+#### save through POST
+
+Posting to the endpoint creates a video entry for a given uses.
+A POST call to `http(s)://hostname:port/videos` 
 with the following JSON body will do the trick:
 
 ```javascript
 {
+  "username": "your-user-name",
   "consumerKey": "the user's consumer key",
   "url": "the URL to the video page / page with video",
   "title": "the title of the video"
@@ -30,10 +34,10 @@ with the following JSON body will do the trick:
 An example of such a POST request can be made with CURL:
 
 ```bash
-curl -H "Content-Type: application/json" -X POST -d '{"consumerKey":"xyz","url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "title":"whaddyathink"}' http://hostname:port/save/your-username
+curl -H "Content-Type: application/json" -X POST -d '{"username":"your-username", "consumerKey":"xyz","url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "title":"whaddyathink"}' http://hostname:port/videos
 ```
 
-### /list/:user
+#### List of video's through GET
 
 TODO: create an API for retrieving a user's list of saved video's.
 
@@ -89,4 +93,4 @@ With a MongoDB and watcher user setup you can run the server through:
 
 Or just
 
-`npm start` if you already set the MONGODB_URI environment variable.
+`npm start` if you already set the `MONGODB_URI` environment variable.
