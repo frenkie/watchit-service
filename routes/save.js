@@ -1,5 +1,5 @@
 var bodyParser = require('body-parser');
-var dbModels = require('../database/Models');
+var dbModels = require('watchit-dal/odm/Models');
 var debug = require('debug')('save');
 var express = require('express');
 var helpers = require('../lib/helpers');

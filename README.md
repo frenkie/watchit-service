@@ -37,9 +37,6 @@ An example of such a POST request can be made with CURL:
 curl -H "Content-Type: application/json" -X POST -d '{"username":"your-username", "consumerKey":"xyz","url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "title":"whaddyathink"}' http://hostname:port/videos
 ```
 
-#### List of video's through GET
-
-TODO: create an API for retrieving a user's list of saved video's.
 
 ### If This Then That recipe - Pocket
 There is an [If This Then That](https://ifttt.com/recipes/335244-create-a-unified-playlist-of-video-s-saved-through-pocket)
