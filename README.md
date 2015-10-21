@@ -6,7 +6,8 @@ sit back and enjoy your saved playlist hassle-free.
 
 # Currently in development stage, so come back later!
 The service is currently in development and will be accompanied by
- a separate front end project and hopefully fully [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service) available. Of course you can 
+a separate [front end project](https://github.com/frenkie/watchit-frontend)
+and hopefully fully [SAAS](https://en.wikipedia.org/wiki/Software_as_a_service) available. Of course you can 
 deploy it yourself (even privately) if you want, just check the 
 'Running it yourself' item below.
 
@@ -71,7 +72,7 @@ Example:
 
 
 ### users
-To be able to save video's there has to be a user in the database.
+To be able to save videos there has to be a user in the database.
 Watchit users are maintained in the `watcher` collection.
 Create a watcher entry with the following properties:
  
